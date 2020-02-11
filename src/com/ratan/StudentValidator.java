@@ -1,5 +1,8 @@
 package com.ratan;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
@@ -18,12 +21,18 @@ public class StudentValidator implements Validator {
 		
 		StudentBean s=(StudentBean)obj;
 		
-		System.out.println("inside validate method...");
+		
 		if(s.getRoll()<100){
-			System.out.println("inside if cond..");	
-			err.reject("roll","roll number should be greater than 100");
+		
+			err.rejectValue("roll","roll.invalid");
 			
 		}
+		if(s.getDob() == null){
+			
+			err.rejectValue("dob","","Date is mandatory");
+		}
+		
+		
 		
 		
 	}

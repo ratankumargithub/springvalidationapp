@@ -23,6 +23,8 @@
 <h2>Courses are <%=c %></h2>
 <h2>Gender is <%=s.getGender() %></h2>
 <h2>Terms is <%=s.isTerms() %></h2>
+<h2>DOB is <%=s.getDob() %></h2>
+
 
 
 

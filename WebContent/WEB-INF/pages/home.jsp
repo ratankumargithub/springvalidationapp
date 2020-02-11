@@ -57,8 +57,8 @@ Select City :
 <br><br>
 
 
-
-
+Enter Dob :<f:input path="dob"/><f:errors path="dob"/>
+<br><br>
 <input type="submit" value="Register">
 
 

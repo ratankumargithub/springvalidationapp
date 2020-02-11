@@ -1,13 +1,17 @@
 package com.ratan;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class StudentBean implements Serializable{
 
@@ -33,9 +37,24 @@ public class StudentBean implements Serializable{
 	@NotBlank(message = "must select the city")
 	private String city;
 	
+	@NotNull
+	private Date dob;
+	
 	
 	public String getCity() {
 		return city;
+	}
+
+
+	
+	public Date getDob() {
+		return dob;
+	}
+
+
+
+	public void setDob(Date dob) {
+		this.dob = dob;
 	}
 
 
@@ -76,7 +95,7 @@ public class StudentBean implements Serializable{
 
 
 
-	public StudentBean(int roll, String name, int marks,String[] courses,boolean terms,String gender,String city) {
+	public StudentBean(int roll, String name, int marks,String[] courses,boolean terms,String gender,String city,Date dob) {
 		super();
 		this.roll = roll;
 		this.name = name;
@@ -85,6 +104,7 @@ public class StudentBean implements Serializable{
 		this.terms=terms;
 		this.gender=gender;
 		this.city=city;
+		this.dob=dob;
 	}
 
 

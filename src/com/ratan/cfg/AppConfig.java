@@ -3,6 +3,7 @@ package com.ratan.cfg;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.support.ReloadableResourceBundleMessageSource;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
@@ -23,4 +24,19 @@ public class AppConfig {
 		return irv;
 	
 	}	
+		
+		@Bean(name="messageSource")
+		public ReloadableResourceBundleMessageSource rbms() {
+				
+				ReloadableResourceBundleMessageSource rb=new 						ReloadableResourceBundleMessageSource();
+				
+				rb.setBasename("/WEB-INF/resources/messages");
+				
+				return rb;		
+		}
+		
+		
+		
+		
+		
 }
